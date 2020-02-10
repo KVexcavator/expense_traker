@@ -2,8 +2,7 @@ require_relative '../../../app/api'
 require 'rack/test'
 
 module ExpenseTracker
-  RecordResult = Struct.new(:success?, :expense_id, :error_message)
-
+  
   RSpec.describe API do
     include Rack::Test::Methods
 
@@ -14,6 +13,7 @@ module ExpenseTracker
     let(:ledger) {instance_double('ExpenseTracker::Ledger')}
 
     describe 'POST /expenses' do
+
       context 'when the expense is successfully recorded' do
         let(:expense) {{ 'some' => 'data' }}
 
@@ -35,6 +35,7 @@ module ExpenseTracker
         end
 
       end
+      
       context 'when the expense fails validation' do
         let(:expense) {{ 'some' => 'data' }}
 
