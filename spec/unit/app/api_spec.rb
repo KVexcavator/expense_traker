@@ -35,7 +35,7 @@ module ExpenseTracker
         end
 
       end
-      
+
       context 'when the expense fails validation' do
         let(:expense) {{ 'some' => 'data' }}
 
@@ -58,5 +58,19 @@ module ExpenseTracker
 
       end
     end
+
+    describe 'GET /expenses/:date' do
+      context 'when wzpenses exist on the given date' do
+        it 'returns the expense records as JSON'
+        it 'responds with a 200 (OK)'
+      end
+
+      context 'when there are no expenses on the given date' do
+        it 'redurns an empty array as JSON'
+        it 'responds with a 200 (OK)'
+      end
+
+    end
+
   end
 end
